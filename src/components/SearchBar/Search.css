@@ -1,0 +1,43 @@
+form {
+  display: flex;
+  margin-top: 0.8rem;
+}
+
+input {
+  border: none;
+  outline: none;
+  width: 320px;
+  height: 35px;
+  border-radius: 4px;
+  padding-left: 1rem;
+  font-size: 18px;
+}
+
+input::placeholder {
+  font-style: italic;
+}
+
+.search_btn {
+  border: none;
+  outline: none;
+  background-color: white;
+  padding: 0 1rem;
+  font-size: 18px;
+  border-radius: 4px;
+  color: #d67070;
+  display: none;
+}
+
+@media (max-width: 350px) {
+  input {
+    width: 270px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 285px) {
+  input {
+    width: 100%;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #e89a9a;
+  padding: 1rem;
+}
+
+.header a {
+  padding: 0.5rem;
+  font-size: 40px;
+  font-style: italic;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+@media (max-width: 350px) {
+  .header a {
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+  }
+}
