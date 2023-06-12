@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import './App.css';
 import Feed from "./components/Feed/Feed";
 import Header from "./components/Header/Header";
+import Loader from "./components/Loader";
 
 export function App() {
   const [postdata,setPostData] = useState()
@@ -23,7 +24,11 @@ export function App() {
   return (
     <div className="App">
       <Header setqueryData={setqueryData} />
-      <Feed postData={queryData ? queryData : postdata} />
+      {postdata ? (
+        <Feed postData={queryData ? queryData : postdata} />
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 }

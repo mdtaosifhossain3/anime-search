@@ -5,7 +5,13 @@ function Card({ postData }) {
   const [visible,setvisible] = useState(9)
   
   const clickHandler = () => {
-    setvisible((pvalue) => pvalue + 6)
+    if(visible <= postData.length){
+
+      setvisible((pvalue) => pvalue + 6)
+    }
+    else{
+      setvisible(6);
+    }
   }
   
   
@@ -30,9 +36,13 @@ function Card({ postData }) {
             </div>
           ))}
       </div>
-      <button className="showMoreBtn" onClick={clickHandler}>
-        Show More
-      </button>
+      {postData.length === 0 ? (
+        ""
+      ) : (
+        <button className="showMoreBtn" onClick={clickHandler}>
+          Show {visible >= postData.length ? "Less" : "More"}
+        </button>
+      )}
     </div>
   );
 }

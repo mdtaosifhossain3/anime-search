@@ -1,16 +1,21 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Search.css';
 
 
 function Search({ setqueryData }) {
   const [query, setquery] = useState("");
+
   const searchHandler = (e) => {
     e.preventDefault();
     const fetchData = async () => {
-      const res = await axios.get(`https://api.jikan.moe/v4/anime?q=${search}`);
-
-      setqueryData(res.data.data);
+      try{
+        const res = await axios.get(`https://api.jikan.moe/v4/anime?q=${query}`);
+        setqueryData(res.data.data);
+        
+      }catch(err){
+        console.log(err)
+      }
     };
 
     fetchData();
